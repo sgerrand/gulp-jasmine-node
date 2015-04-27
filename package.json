@@ -4,14 +4,14 @@
   "description": "A Gulp plugin to run Jasmine features using jasmine-node",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/sgerrand/gulp-jasmine-node"
   },
   "keywords": [
-    "gulp",
+    "gulpplugin",
     "jasmine-node"
   ],
   "author": "Sasha Gerrand <npm-gulp-jasmine-node@sgerrand.com>",
@@ -19,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/sgerrand/gulp-jasmine-node/issues"
   },
-  "homepage": "https://github.com/sgerrand/gulp-jasmine-node"
+  "homepage": "https://github.com/sgerrand/gulp-jasmine-node",
+  "dependencies": {
+    "coffee-script": "^1.9.2",
+    "gulp-util": "^3.0.4",
+    "jasmine-node": "^1.14.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.10.0",
+    "mocha": "^2.2.4"
+  }
 }
