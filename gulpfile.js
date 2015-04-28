@@ -17,8 +17,8 @@ gulp.task('lint', function() {
 gulp.task('spec', function() {
   return gulp.src(['spec/**/*.js'])
              .pipe(jasmine({
-               isVerbose: true,
-               showColors: true
+               showColors: true,
+               verbose: true
              }));
 });
 

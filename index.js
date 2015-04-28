@@ -8,14 +8,15 @@ module.exports = function(options) {
   var path    = require('path'),
       gutil   = require('gulp-util'),
       jasmine = require('jasmine-node'),
-      through = require('through2');
+      through = require('through2'),
+      util    = require('util');
 
   var autotest          = options.autotest || false,
       captureExceptions = options.captureExceptions || false,
+      coffee            = options.coffee || false,
       extensions        = options.extensions || "js",
       forceExit         = options.forceExit || false,
       growl             = options.growl || false,
-      isVerbose         = options.isVerbose || false,
       junitreport       = options.junitreport,
       match             = options.match || ".",
       matchall          = options.matchall || false,
@@ -25,9 +26,9 @@ module.exports = function(options) {
       specFolders       = options.specFolders || [],
       specNameMatcher   = options.specNameMatcher || "spec",
       teamcity          = options.teamcity || false,
-      useCoffee         = options.useCoffee || false,
       useHelpers        = options.useHelpers || false,
-      useRequireJs      = options.requirejs || false;
+      useRequireJs      = options.requirejs || false,
+      verbose           = options.verbose || false;
 
   if (projectRoot) {
     specFolders.push(projectRoot);
@@ -54,10 +55,10 @@ module.exports = function(options) {
   };
 
   options = {
-    coffee:          useCoffee,
+    coffee:          coffee,
     extensions:      extensions,
     growl:           growl,
-    isVerbose:       isVerbose,
+    isVerbose:       verbose,
     junitreport:     junitreport,
     match:           match,
     matchall:        matchall,
@@ -81,7 +82,7 @@ module.exports = function(options) {
     coffee:             options.coffee,
     growl:              options.growl,
     includeStackTrace:  options.includeStackTrace,
-    isVerbose:          options.verbose,
+    isVerbose:          options.isVerbose,
     junitreport:        options.junitreport,
     onComplete:         onComplete,
     regExpSpec:         regExpSpec,
