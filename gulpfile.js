@@ -1,4 +1,5 @@
-var jshint  = require("gulp-jshint"),
+var jasmine = require("./"),
+    jshint  = require("gulp-jshint"),
     gulp    = require("gulp");
 
 gulp.task('lint', function() {
@@ -13,5 +14,18 @@ gulp.task('lint', function() {
              .pipe(jshint.reporter('fail'));
 });
 
-gulp.task('test', ['lint'], function() {
+gulp.task('spec', function() {
+  return gulp.src(['spec/**/*.js'])
+             .pipe(jasmine({
+               isVerbose: true,
+               showColors: true
+             }));
+});
+
+gulp.task('test', ['lint', 'spec'], function() {
+
+});
+
+gulp.task('default', ['test'], function() {
+
 });
