@@ -28,8 +28,6 @@
   },
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-jshint": "^1.10.0",
-    "jasmine": "^2.2.1",
-    "mocha": "^2.2.4"
+    "gulp-jshint": "^1.10.0"
   }
 }
